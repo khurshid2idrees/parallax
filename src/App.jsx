@@ -13,6 +13,12 @@ import Vision from './Components/Vision';
 
 import { useMediaQuery } from 'react-responsive';
 import Header from './Components/Header';
+import Firstvideo from './Components/Firstvideo';
+import Leverage from './Components/Leverage';
+import SmartSolution from './Components/SmartSolution';
+import OurExcellence from './Components/OurExcellence';
+import OurVision from './Components/OurVision';
+import OurTeam from './Components/OurTeam';
 
 function App() {
   const ref = useRef();
@@ -31,40 +37,34 @@ function App() {
     },
   });
 
-  const isMobile = useMediaQuery({maxWidth:'768px'});
+  const isMobile = useMediaQuery({ maxWidth: '768px' });
 
   return (
 
     <>
       <div>
-        <Parallax pages={9.5} ref={ref}>
+        <Parallax pages={isMobile ? 9.6 : 9.5} ref={ref}>
 
           <ParallaxLayer
             offset={0}
-            speed={0.05}
+            speed={0.5}
             style={{
               background: '#1b9bef'
             }}
           >
-            <Header/>
+            <Header />
           </ParallaxLayer>
-          
+
           <ParallaxLayer
             offset={1.1}
+            style={{
+              background: '#fff'
+            }}
           // speed={0.05}
 
           >
 
-            {/* <div> */}
-
-              <div className='flex justify-center'>
-
-                <video className="pa-video c-vid" preload="none" poster="assets/video/about-video.mp4" autoPlay loop muted playsInline style={{ borderRadius: '13rem', height: '400px', objectFit: 'cover', width: '80%' }}>
-                  <source src="https://wyr.ai/assets/video/about-video.mp4" type="video/mp4" />
-                  Your browser does not support HTML5 video
-                </video>
-              </div>
-            {/* </div> */}
+            <Firstvideo />
 
           </ParallaxLayer>
 
@@ -77,30 +77,15 @@ function App() {
             }}
           >
 
-            <div class="py-16" >
-
-              <div class="space-y-6 md:space-y-0 md:flex flex-wrap md:gap-6 lg:items-center lg:gap-12 md:ml-28 ml-0">
-
-                <div className='flex flex-wrap md:w-3/4 w-full'>
 
 
-                  <h2 className='font-semibold md:text-5xl text-4xl  text-white md:leading-normal leading-normal font-sans'>
-                    We leverage cutting-edge technology and industry best practices to deliver accurate, efficient, and reliable inspection services.
-                  </h2>
-                </div>
-
-
-
-
-              </div>
-              {/* </div> */}
-            </div>
+            <Leverage />
 
           </ParallaxLayer>
           <ParallaxLayer
             offset={2.7}
             style={{
-              background: "black",
+              background: "#fff",
 
             }}
           >
@@ -128,19 +113,10 @@ function App() {
 
           >
 
-            <div className='md:ml-28 flex mt-20'>
-
-
-              <h2 className='font-normal tracking-wide md:text-9xl text-4xl text-white leading-loose font-sans'>
-                SMART
-                <br />
-
-                <span className='mt-8'>SOLUTION</span>
-              </h2>
-            </div>
+            <SmartSolution />
           </ParallaxLayer>
           <ParallaxLayer
-            offset={4.7}
+            offset={isMobile ? 4.5 : 4.7}
             style={{
               backgroundColor: '#1b9bef',
               borderTop: '2px solid #fff'
@@ -153,23 +129,14 @@ function App() {
 
 
           <ParallaxLayer
-            offset={5.2}
+            offset={isMobile ? 5.4 : 5.2}
             style={{
               background: '#f9f9f9'
             }}
 
           >
 
-            <div className='md:ml-28 flex mt-20'>
-
-
-              <h2 className='font-normal tracking-wide md:text-9xl text-4xl text-black leading-loose font-sans'>
-                OUR
-                <br />
-
-                <span className='mt-8'>EXCELLENCE</span>
-              </h2>
-            </div>
+            <OurExcellence />
           </ParallaxLayer>
 
           <ParallaxLayer
@@ -186,27 +153,18 @@ function App() {
 
 
           <ParallaxLayer
-            offset={6.5}
+            offset={isMobile ? 6.65 : 6.5}
             style={{
               background: '#fff'
             }}
 
           >
 
-            <div className='md:ml-28 flex mt-20'>
-
-
-              <h2 className='font-normal tracking-wide md:text-9xl text-4xl text-black leading-loose font-sans'>
-                OUR
-                <br />
-
-                <span className='mt-8'>VISION</span>
-              </h2>
-            </div>
+            <OurVision />
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={7.2}
+            offset={isMobile ? 7.1 : 7.2}
             style={{
               backgroundColor: '#f9f9f9',
               borderTop: '2px solid #000'
@@ -218,11 +176,11 @@ function App() {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={7.7}
+            offset={isMobile ? 8.0 : 7.7}
             // speed={0.5}
             style={{ backgroundColor: '#000', zIndex: 0 }}
-            
-            >
+
+          >
             {/* Adjust zIndex as needed */}
             <video
               autoPlay
@@ -234,7 +192,7 @@ function App() {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                
+
                 zIndex: -999, // Place the video below other content
               }}
             >
@@ -244,17 +202,17 @@ function App() {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={7.8}
+            offset={isMobile ? 8.1 : 7.8}
             style={{
               // background: '#1b9bef',
-              zIndex:1,
-              position:'absolute'
+              zIndex: 1,
+              position: 'absolute'
             }}
             speed={0.5}
 
           >
 
-            <div className='md:ml-28 flex mt-20'>
+            <div className='md:ml-28 flex md:mt-20 mt-2'>
 
 
               <h2 className='font-normal tracking-wide md:text-9xl text-4xl text-white leading-loose font-sans'>
@@ -276,23 +234,15 @@ function App() {
 
 
           <ParallaxLayer
-            offset={8.7}
+            offset={isMobile ? 9.2 : 8.7}
             style={{
               background: '#fff',
-              borderBottom:'2px solid #000'
+              borderBottom: '2px solid #000'
             }}
 
           >
 
-            <div className='md:ml-28 flex mt-20'>
-
-
-              <h2 className='font-normal tracking-wide md:text-9xl text-4xl text-black leading-loose font-sans'>
-                OUR
-                <br />
-                <span className='mt-8'>TEAM</span>
-              </h2>
-            </div>
+            <OurTeam />
           </ParallaxLayer>
 
 

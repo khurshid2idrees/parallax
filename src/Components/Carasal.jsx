@@ -1,14 +1,10 @@
 import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-// import './styles.css';
 
-// import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
 
 export default function Carasal() {
@@ -16,9 +12,7 @@ export default function Carasal() {
         <Swiper
             slidesPerView={1}
             spaceBetween={10}
-            // pagination={{
-            //     clickable: true,
-            // }}
+           
             style={{
                 marginTop: '7rem'
             }}
@@ -51,7 +45,7 @@ export default function Carasal() {
             className="mySwiper"
         >
 
-            <SwiperSlide className='text-white'>
+            <SwiperSlide className='text-black'>
                 <div>
 
                     <div className='flex justify-center'>
@@ -65,9 +59,9 @@ export default function Carasal() {
 
 
             </SwiperSlide>
-            <SwiperSlide className='font-semibold md:text-7xl text-4xl  text-white md:leading-tight leading-tight font-sans mt-4 text-center'>AI-POWERED
+            <SwiperSlide className='font-semibold md:text-7xl text-4xl  text-black md:leading-tight leading-tight font-sans mt-4 text-center'>AI-POWERED
                 ACCURACY</SwiperSlide>
-            <SwiperSlide className='text-white'>
+            <SwiperSlide className='text-black'>
 
                 <div>
 
@@ -80,9 +74,9 @@ export default function Carasal() {
                     </div>
                 </div>
             </SwiperSlide>
-            <SwiperSlide className='font-semibold md:text-7xl text-4xl  text-white md:leading-tight leading-tight font-sans mt-4 text-center' >STREAMLINED
+            <SwiperSlide className='font-semibold md:text-7xl text-4xl  text-black md:leading-tight leading-tight font-sans mt-4 text-center' >STREAMLINED
                 INSPECTIONS</SwiperSlide>
-            <SwiperSlide className='text-white pl-4'>
+            <SwiperSlide className='text-black pl-4'>
 
                 <div>
 
@@ -95,9 +89,9 @@ export default function Carasal() {
                     </div>
                 </div>
             </SwiperSlide>
-            <SwiperSlide className='font-semibold md:text-7xl text-4xl  text-white md:leading-tight leading-tight font-sans'>REAL-TIME
+            <SwiperSlide className='font-semibold md:text-7xl text-4xl  text-black md:leading-tight leading-tight font-sans'>REAL-TIME
                 RESULTS</SwiperSlide>
-            <SwiperSlide className='text-white'>
+            <SwiperSlide className='text-black'>
                 <div>
 
                     <div className='flex justify-center'>
@@ -109,7 +103,7 @@ export default function Carasal() {
                     </div>
                 </div>
             </SwiperSlide>
-            <SwiperSlide className='font-semibold md:text-7xl text-4xl  text-white md:leading-tight leading-tight font-sans mt-4 text-center'>DATA-DRIVEN
+            <SwiperSlide className='font-semibold md:text-7xl text-4xl  text-black md:leading-tight leading-tight font-sans mt-4 text-center'>DATA-DRIVEN
                 INSIGHTS</SwiperSlide>
 
         </Swiper>
