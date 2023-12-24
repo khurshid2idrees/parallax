@@ -12,7 +12,7 @@ export default function Approach() {
   return (
     <>
 
-      <div class="py-16 bg-white" >
+      <div class="md:py-16 py-0 bg-white" >
         <div class="container  ">
           <div class="space-y-6 md:space-y-0 md:flex flex-wrap  lg:items-center ">
 

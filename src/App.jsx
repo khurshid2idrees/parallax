@@ -11,6 +11,9 @@ import EnhanQuality from './Components/EnhanQuality';
 import Excellence from './Components/Excellence';
 import Vision from './Components/Vision';
 
+import { useMediaQuery } from 'react-responsive';
+import Header from './Components/Header';
+
 function App() {
   const ref = useRef();
 
@@ -28,11 +31,13 @@ function App() {
     },
   });
 
+  const isMobile = useMediaQuery({maxWidth:'768px'});
+
   return (
 
     <>
       <div>
-        <Parallax pages={10} ref={ref}>
+        <Parallax pages={9.5} ref={ref}>
 
           <ParallaxLayer
             offset={0}
@@ -41,26 +46,16 @@ function App() {
               background: '#1b9bef'
             }}
           >
-            <div className='md:ml-28 flex mt-20'>
-
-
-              <h2 className='font-normal md:text-9xl text-4xl text-white leading-tight font-sans'>
-                Our &nbsp;
-                <span id='button' className='border-white border-2 px-8 rounded-full'>Innovative</span>
-                <br />
-                AI
-                <br />
-                Solution
-              </h2>
-            </div>
+            <Header/>
           </ParallaxLayer>
+          
           <ParallaxLayer
             offset={1.1}
           // speed={0.05}
 
           >
 
-            <div>
+            {/* <div> */}
 
               <div className='flex justify-center'>
 
@@ -69,7 +64,7 @@ function App() {
                   Your browser does not support HTML5 video
                 </video>
               </div>
-            </div>
+            {/* </div> */}
 
           </ParallaxLayer>
 
@@ -224,9 +219,9 @@ function App() {
 
           <ParallaxLayer
             offset={7.7}
-            speed={0.5}
+            // speed={0.5}
             style={{ backgroundColor: '#000', zIndex: 0 }}
-            // sticky={{start:7.7,end:9.5}}
+            
             >
             {/* Adjust zIndex as needed */}
             <video
@@ -235,11 +230,12 @@ function App() {
               muted
               playsInline
               style={{
-                position: 'absolute',
+                position: 'fixed',
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                zIndex: -1, // Place the video below other content
+                
+                zIndex: -999, // Place the video below other content
               }}
             >
               <source src="https://wyr.ai/assets/video/waves.mp4" type="video/mp4" />
@@ -248,18 +244,25 @@ function App() {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={7.7}
+            offset={7.8}
             style={{
               // background: '#1b9bef',
-              zIndex:1
+              zIndex:1,
+              position:'absolute'
             }}
+            speed={0.5}
 
           >
 
             <div className='md:ml-28 flex mt-20'>
 
 
-              <h2 className='font-normal tracking-wide md:text-9xl text-4xl text-black leading-loose font-sans'>
+              <h2 className='font-normal tracking-wide md:text-9xl text-4xl text-white leading-loose font-sans'>
+
+
+
+
+
                 WE CREATE
                 A ROBUST
                 ALGORITHM
@@ -270,6 +273,27 @@ function App() {
             </div>
           </ParallaxLayer>
 
+
+
+          <ParallaxLayer
+            offset={8.7}
+            style={{
+              background: '#fff',
+              borderBottom:'2px solid #000'
+            }}
+
+          >
+
+            <div className='md:ml-28 flex mt-20'>
+
+
+              <h2 className='font-normal tracking-wide md:text-9xl text-4xl text-black leading-loose font-sans'>
+                OUR
+                <br />
+                <span className='mt-8'>TEAM</span>
+              </h2>
+            </div>
+          </ParallaxLayer>
 
 
         </Parallax>
